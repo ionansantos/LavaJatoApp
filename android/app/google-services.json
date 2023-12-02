@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "940872042326",
+    "project_id": "lava-jato-b8864",
+    "storage_bucket": "lava-jato-b8864.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940872042326:android:c25f4fa5d10af6a99d38f7",
+        "android_client_info": {
+          "package_name": "com.lavajatozeca"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoDosbbX1992fn8-A3dCUIrCKqz-BMDR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
