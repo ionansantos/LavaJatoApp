@@ -52,14 +52,14 @@ export const AuthProvider = ({children}) => {
 
               if (userData.userType === 'cliente') {
                 setUser(userData);
-                navigation.navigate('HomeClientScreen', {
-                  screen: 'HomeClientScreen',
+                navigation.navigate('ClientScreen', {
+                  screen: 'ClientScreen',
                   params: {userData},
                 });
               } else {
                 setUser(userData);
-                navigation.navigate('HomeAdmScreen', {
-                  screen: 'HomeAdmScreen',
+                navigation.navigate('AdmScreen', {
+                  screen: 'AdmScreen',
                   params: {userData},
                 });
               }

@@ -170,9 +170,7 @@ export default function Login() {
         </TouchableOpacity>
 
         <TouchableOpacity style={style.buttonRegister}>
-          <Link
-            to={{screen: 'RegisterScreen', params: {id: 'jane'}}}
-            style={style.registerText}>
+          <Link to={{screen: 'RegisterScreen'}} style={style.registerText}>
             Novo usuário? criar conta
           </Link>
         </TouchableOpacity>

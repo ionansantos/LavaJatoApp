@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 
 import {AuthContext} from '../../routes/auth/AuthProvider';
 
-export default function HomeAdm() {
+export default function AdmScreen() {
   const {user, userType, userName, logout} = useContext(AuthContext);
   return (
     <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
