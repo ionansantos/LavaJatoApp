@@ -41,67 +41,18 @@ function MainNavigator() {
   }
 
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      screenOptions={{headerShown: false}}
+      initialRouteName={user ? 'ClientOrAdmScreen' : 'LoginScreen'}>
       {user ? (
-        <>
-          <Stack.Screen
-            name="ClientScreen"
-            component={ClientScreen}
-            initialParams={{userData: user}}
-          />
-          <Stack.Screen name="AdmScreen" component={AdmScreen} />
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
-        </>
-      ) : (
-        <>
-          <Stack.Screen name="LoginScreen" component={LoginScreen} />
-          <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
-        </>
-      )}
+        <Stack.Screen
+          name="ClientOrAdmScreen"
+          component={user.userType === 'cliente' ? ClientScreen : AdmScreen}
+          initialParams={{userData: user}}
+        />
+      ) : null}
+      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
     </Stack.Navigator>
   );
 }
-
-// function HomeClientStackNavigator() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen
-//         name="Appointments"
-//         component={Appointments}
-//         options={{
-//           title: '',
-//           headerStyle: {backgroundColor: '#5FBDFF'},
-//           tabBarLabel: 'Agendamentos',
-//           tabBarIcon: ({name, red, size}) => {
-//             return (
-//               <Ionicons name={'alarm-outline'} color={'#5FBDFF'} size={30} />
-//             );
-//           },
-//         }}
-//       />
-//       <Tab.Screen
-//         name="ProfileClient"
-//         component={ProfileClient}
-//         options={{
-//           title: '',
-//           headerStyle: {backgroundColor: '#5FBDFF'},
-//           tabBarLabel: 'Perfil',
-//           tabBarIcon: ({name, red, size}) => {
-//             return (
-//               <Ionicons name={'person-outline'} color={'#5FBDFF'} size={30} />
-//             );
-//           },
-//         }}
-//       />
-//     </Tab.Navigator>
-//   );
-// }
-
-// function HomeAdmStackNavigator() {
-//   return (
-//     <Tab.Navigator>
-//       <Tab.Screen name="HomeClientScreen" component={HomeClientScreen} />
-//       <Tab.Screen name="HomeAdmScreen" component={HomeAdmScreen} />
-//     </Tab.Navigator>
-//   );
-// }

@@ -52,13 +52,13 @@ export const AuthProvider = ({children}) => {
 
               if (userData.userType === 'cliente') {
                 setUser(userData);
-                navigation.navigate('ClientScreen', {
+                navigation.navigate('ClientOrAdmScreen', {
                   screen: 'ClientScreen',
                   params: {userData},
                 });
               } else {
                 setUser(userData);
-                navigation.navigate('AdmScreen', {
+                navigation.navigate('ClientOrAdmScreen', {
                   screen: 'AdmScreen',
                   params: {userData},
                 });
@@ -106,7 +106,10 @@ export const AuthProvider = ({children}) => {
   async function logout() {
     try {
       await auth().signOut();
-      navigation.navigate('LoginScreen');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'LoginScreen'}],
+      });
     } catch (e) {
       console.error('Error during logout:', e);
     }
