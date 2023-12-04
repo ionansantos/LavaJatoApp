@@ -24,33 +24,6 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const handleLogin = async () => {
-  //   try {
-  //     const userCredential = await auth().signInWithEmailAndPassword(
-  //       email,
-  //       password,
-  //     );
-  //     const user = userCredential.user;
-  //     const userDoc = await firestore().collection('users').doc(user.uid).get();
-  //     const userType = userDoc.data()?.userType || 'cliente';
-  //     const userName = userDoc.data()?.name;
-
-  //     // passa dados do usuario para tela home
-  //     navigation.navigate('Home', {userName, userType});
-
-  //     // Faça algo com o userType, por exemplo, redirecione para uma tela específica
-  //     console.log('UserType:', userType, 'name', userName);
-
-  //     // O usuário está autenticado, você pode realizar ações adicionais aqui, se necessário.
-  //   } catch (error) {
-  //     Alert.alert('Ops!', 'Credenciais Inválidas', [
-  //       {text: 'OK', onPress: () => console.log('OK Pressed')},
-  //     ]);
-  //     console.error(error.message);
-  //     // Trate erros de autenticação aqui, se necessário.
-  //   }
-  // };
-
   useEffect(() => {
     keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',

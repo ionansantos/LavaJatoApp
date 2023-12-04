@@ -8,24 +8,23 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Home from './home/index';
 import Appointments from './appointments/index';
 import ProfileClient from './profile/index';
+import CustomTabBar from '../../components/CustomTabBar';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 export default function ClientScreen() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <CustomTabBar {...props} />}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           title: '',
-          headerStyle: {backgroundColor: '#5FBDFF'},
+          headerStyle: {backgroundColor: '#161A30'},
           tabBarLabel: 'Inicio',
-          tabBarIcon: ({name, red, size}) => {
-            return (
-              <Ionicons name={'home-outline'} color={'#5FBDFF'} size={30} />
-            );
+          tabBarIcon: ({color, size}) => {
+            return <Ionicons name="home-outline" color={color} size={size} />;
           },
         }}
       />
@@ -34,11 +33,11 @@ export default function ClientScreen() {
         component={Appointments}
         options={{
           title: '',
-          headerStyle: {backgroundColor: '#5FBDFF'},
+          headerStyle: {backgroundColor: '#161A30'},
           tabBarLabel: 'Agendamentos',
-          tabBarIcon: ({name, red, size}) => {
+          tabBarIcon: ({color, size}) => {
             return (
-              <Ionicons name={'alarm-outline'} color={'#5FBDFF'} size={30} />
+              <Ionicons name={'alarm-outline'} color={color} size={size} />
             );
           },
         }}
@@ -48,11 +47,11 @@ export default function ClientScreen() {
         component={ProfileClient}
         options={{
           title: '',
-          headerStyle: {backgroundColor: '#5FBDFF'},
+          headerStyle: {backgroundColor: '#161A30'},
           tabBarLabel: 'Meu Perfil',
-          tabBarIcon: ({name, red, size}) => {
+          tabBarIcon: ({color, size}) => {
             return (
-              <Ionicons name={'person-outline'} color={'#5FBDFF'} size={30} />
+              <Ionicons name={'person-outline'} color={color} size={size} />
             );
           },
         }}
