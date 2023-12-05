@@ -139,7 +139,7 @@ export default function Login() {
         <TouchableOpacity
           style={style.buttonSubmit}
           onPress={() => login(email, password)}>
-          <Text style={style.submitText}>Acessar</Text>
+          <Text style={style.submitText}>Login</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={style.buttonRegister}>

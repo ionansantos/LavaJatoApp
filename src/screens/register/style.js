@@ -39,7 +39,7 @@ export default style = StyleSheet.create({
   },
 
   buttonSubmit: {
-    backgroundColor: '#59BFFF',
+    backgroundColor: '#161A30',
     width: 200,
     height: 45,
     alignItems: 'center',

@@ -1,5 +1,5 @@
-import React, {useContext} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import React from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {AuthContext, useAuth} from '../../routes/auth/AuthProvider';
 import {useNavigation} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -15,13 +15,22 @@ const Tab = createBottomTabNavigator();
 
 export default function ClientScreen() {
   return (
-    <Tab.Navigator tabBar={props => <CustomTabBar {...props} />}>
+    <Tab.Navigator
+      screenOptions={{
+        headerStyle: styles.header,
+        headerTitleStyle: {
+          color: 'white',
+          textAlign: 'center',
+          alignItems: 'center',
+          width: 380,
+        },
+      }}
+      tabBar={props => <CustomTabBar {...props} />}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           title: '',
-          headerStyle: {backgroundColor: '#161A30'},
           tabBarLabel: 'Inicio',
           tabBarIcon: ({color, size}) => {
             return <Ionicons name="home-outline" color={color} size={size} />;
@@ -33,7 +42,6 @@ export default function ClientScreen() {
         component={Appointments}
         options={{
           title: '',
-          headerStyle: {backgroundColor: '#161A30'},
           tabBarLabel: 'Agendamentos',
           tabBarIcon: ({color, size}) => {
             return (
@@ -47,7 +55,6 @@ export default function ClientScreen() {
         component={ProfileClient}
         options={{
           title: '',
-          headerStyle: {backgroundColor: '#161A30'},
           tabBarLabel: 'Meu Perfil',
           tabBarIcon: ({color, size}) => {
             return (
@@ -59,3 +66,14 @@ export default function ClientScreen() {
     </Tab.Navigator>
   );
 }
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: '#161A30',
+    // borderBottomLeftRadius: 26,
+    // borderBottomRightRadius: 26,
+  },
+  title: {
+    color: 'white',
+  },
+});

@@ -30,16 +30,16 @@ export default style = StyleSheet.create({
 
   input: {
     backgroundColor: '#FFF',
+    color: '#222',
     width: 300,
     marginBottom: 15,
-    color: '#222',
     fontSize: 22,
     borderRadius: 7,
     padding: 10,
   },
 
   buttonSubmit: {
-    backgroundColor: '#59BFFF',
+    backgroundColor: '#161A30',
     width: 200,
     height: 45,
     alignItems: 'center',
@@ -48,7 +48,7 @@ export default style = StyleSheet.create({
   },
 
   submitText: {
-    color: '#FFF',
+    color: '#F3F3F3',
     fontSize: 19,
   },
 

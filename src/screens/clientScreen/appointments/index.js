@@ -2,13 +2,13 @@ import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext, useAuth} from '../../../routes/auth/AuthProvider';
+import styles from './style';
 
 export default function Appointments({route}) {
-  const {logout} = useContext(AuthContext);
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={styles.container}>
       <Text>Bem vindo</Text>
-      <TouchableOpacity
+      {/* <TouchableOpacity
         style={{
           marginTop: 20,
           padding: 10,
@@ -17,7 +17,7 @@ export default function Appointments({route}) {
         }}
         onPress={logout}>
         <Text style={{color: 'white'}}>desconecta da tela agendamento</Text>
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </View>
   );
 }
