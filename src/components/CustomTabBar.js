@@ -56,10 +56,10 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
   },
   tabContainer: {
-    transform: [{scaleX: 1}],
     width: 300,
     borderRadius: 20,
-    top: -10,
+    top: -70,
+    position: 'absolute',
     flexDirection: 'row',
     backgroundColor: '#161A30',
   },

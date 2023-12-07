@@ -2,10 +2,11 @@ import React, {useContext} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {AuthContext, useAuth} from '../../routes/auth/AuthProvider';
 import {useNavigation} from '@react-navigation/native';
+import style from './style';
 
 export default function Appointments({route}) {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <View style={style.container}>
       <Text>Bem vindo</Text>
       <TouchableOpacity
         style={{

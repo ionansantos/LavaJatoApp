@@ -36,6 +36,7 @@ function MainNavigator() {
   }
 
   return (
+    // <Text>lslslsl</Text>
     <Stack.Navigator
       screenOptions={{headerShown: false}}
       initialRouteName={user ? 'ClientOrAdmScreen' : 'LoginScreen'}>
