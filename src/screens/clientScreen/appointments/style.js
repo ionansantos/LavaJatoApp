@@ -5,6 +5,12 @@ export default style = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#31304D',
+    backgroundColor: 'white',
+  },
+  titleHours: {
+    margin: 18,
+    color: 'black',
+    fontSize: 17,
+    fontWeight: 'bold',
   },
 });

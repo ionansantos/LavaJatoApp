@@ -1,23 +1,29 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {AuthContext, useAuth} from '../../../routes/auth/AuthProvider';
 import style from './style';
+import Calendar from '../../../components/Calendar';
+import TimeSlots from '../../../components/TimeSlots';
 
 export default function Appointments({route}) {
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedTime, setSelectTime] = useState(null);
   return (
     <View style={style.container}>
-      <Text>Bem vindo</Text>
-      {/* <TouchableOpacity
-        style={{
-          marginTop: 20,
-          padding: 10,
-          backgroundColor: 'red',
-          borderRadius: 5,
-        }}
-        onPress={logout}>
-        <Text style={{color: 'white'}}>desconecta da tela agendamento</Text>
-      </TouchableOpacity> */}
+      <Calendar
+        style={{flex: 1}}
+        onSelectDate={setSelectedDate}
+        selected={selectedDate}
+      />
+      <View style={{flex: 2}}>
+        <Text style={style.titleHours}>Horários Disponíveis</Text>
+        <TimeSlots
+          selectedDate={selectedDate}
+          onSelectedTime={setSelectTime}
+          selected={selectedTime}
+        />
+      </View>
     </View>
   );
 }
